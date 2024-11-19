@@ -2,12 +2,11 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to bottom, #fc87c3, #ecaac8, #ffd5ec, #fff5f9, #ffffff); /* Tonos pastel y suaves */
-    color: #4a4a4a; /* Texto en gris cálido */
+    background: linear-gradient(to bottom, #005070, #028bfb, #9dc3ed); /* Tonos pastel rosados y blancos */
+    color: #333; /* Color neutro para contraste */
     overflow-x: hidden;
     transition: background 0.3s ease, color 0.3s ease;
 }
-
 /* Animación de carga épica */
 .loading-screen {
     position: fixed;
@@ -15,7 +14,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(255, 204, 230, 0.9); /* Fondo rosa claro translúcido */
+    background: rgba(20, 20, 20, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,8 +26,8 @@ body {
 }
 
 .spinner {
-    border: 16px solid #ffd5ec; /* Rosa pastel */
-    border-top: 16px solid #ffa6c9; /* Rosa más vibrante */
+    border: 16px solid #e0e0e0;
+    border-top: 16px solid #34495e;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -43,7 +42,7 @@ body {
 h2 {
     margin-top: 20px;
     font-size: 1.5rem;
-    color: #eebfca; /* Rosa vivo */
+    color: rgb(255, 162, 0);
 }
 
 /* Estilos para el interruptor de tema */
@@ -56,7 +55,7 @@ h2 {
 .slider {
     width: 34px;
     height: 20px;
-    background-color: #f3c4d9; /* Rosa pálido */
+    background-color: #ccc;
     border-radius: 34px;
     cursor: pointer;
     position: relative;
@@ -71,12 +70,12 @@ h2 {
     border-radius: 50%;
     left: 4px;
     bottom: 2px;
-    background-color: #ffffff; /* Blanco puro */
+    background-color: white;
     transition: 0.4s;
 }
 
 input:checked + .slider {
-    background-color: #ff8ab9; /* Rosa brillante */
+    background-color: #2196F3;
 }
 
 input:checked + .slider:before {
@@ -85,7 +84,7 @@ input:checked + .slider:before {
 
 .light-theme {
     background: #fff;
-    color: #4a4a4a;
+    color: #333;
 }
 
 /* Pantalla de inicio */
@@ -106,13 +105,13 @@ input:checked + .slider:before {
 /* Estilo para el título con efecto de brillo */
 .intro h1 {
     font-size: 4rem;
-    color: #ff6f91;
+    color: rgb(255, 255, 255);
     animation: fadeIn 2s ease-out, glow 1.5s infinite alternate;
 }
 
 .intro p {
     font-size: 1.5rem;
-    color: #ebeaeb;
+    color: rgb(255, 255, 255);
     margin-top: 20px;
     animation: fadeIn 3s ease-out, glow 1.5s infinite alternate;
 }
@@ -120,8 +119,8 @@ input:checked + .slider:before {
 .cta-button {
     display: inline-block;
     padding: 15px 30px;
-    background: #ffd5ec;
-    color: #4a4a4a;
+    background: #00eaff;
+    color: black;
     font-weight: bold;
     text-decoration: none;
     border-radius: 5px;
@@ -130,13 +129,19 @@ input:checked + .slider:before {
 }
 
 .cta-button:hover {
-    background: #ffb3d9; /* Color más brillante al pasar el mouse */
+    background: #ffffff;
+}
+
+/* Animación de fade-in */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 /* Galería */
 .gallery {
     padding: 50px 0;
-    background: #ffe6f2; /* Fondo rosado tenue */
+    background: #1b1b1b;
 }
 
 .image-grid {
@@ -151,16 +156,24 @@ input:checked + .slider:before {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(255, 182, 193, 0.5); /* Sombras rosas */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     transform: scale(0.95);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .image-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.7); /* Brillo en rosa */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
 }
 
+.image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Estilos para los botones de "Me gusta" y "Compartir" */
 .image-actions {
     position: absolute;
     bottom: 10px;
@@ -177,7 +190,7 @@ input:checked + .slider:before {
 }
 
 .like-btn, .share-btn {
-    background: linear-gradient(to right, #ff7eb9, #ffa6c9, #ffd5ec);
+    background: linear-gradient(to right, #fd0000, #fa6868, #e7bcbc);
     color: white;
     border: none;
     padding: 10px 15px;
@@ -191,7 +204,8 @@ input:checked + .slider:before {
 }
 
 .like-btn:hover, .share-btn:hover {
-    background: linear-gradient(to right, #ffd5ec, #ffa6c9, #ff7eb9);
+    background: linear-gradient(to right, #e7bcbc, #fa6868, #fd0000);
+    color: white;
 }
 
 /* Paginación */
@@ -202,8 +216,8 @@ input:checked + .slider:before {
 
 .page-btn {
     padding: 10px 20px;
-    background: #ffd5ec;
-    color: #4a4a4a;
+    background: #00eaff;
+    color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -212,12 +226,72 @@ input:checked + .slider:before {
 }
 
 .page-btn:hover {
-    background: #ffb3d9;
+    background: #ffffff;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border: none;
+    box-shadow: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.arrow-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#prevArrow {
+    left: 10px;
+}
+
+#nextArrow {
+    right: 10px;
+}
+
+.icon {
+    fill: white;
+    width: 24px;
+    height: 24px;
 }
 
 /* Footer */
 .footer {
-    background: linear-gradient(45deg, #ffa6c9, #ffcee5, #ffffff);
+    background: linear-gradient(45deg, #000000, #333333, #00eaff,  #a8f5f5);
     text-align: center;
     padding: 20px 0;
     font-size: 0.9rem;
@@ -228,12 +302,12 @@ input:checked + .slider:before {
 }
 
 .social-icons a {
-    color: #ffa6c9;
+    color: #ffffff;
     margin: 0 10px;
     font-size: 0.8rem;
     transition: color 0.3s;
 }
 
 .social-icons a:hover {
-    color: #ff7eb9;
+    color: #00ff8c;
 }
