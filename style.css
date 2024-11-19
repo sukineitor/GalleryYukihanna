@@ -1,0 +1,239 @@
+/* Estilos globales */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #fc87c3, #ecaac8, #ffd5ec, #fff5f9, #ffffff); /* Tonos pastel y suaves */
+    color: #4a4a4a; /* Texto en gris cálido */
+    overflow-x: hidden;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Animación de carga épica */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 204, 230, 0.9); /* Fondo rosa claro translúcido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.epic-loader {
+    text-align: center;
+}
+
+.spinner {
+    border: 16px solid #ffd5ec; /* Rosa pastel */
+    border-top: 16px solid #ffa6c9; /* Rosa más vibrante */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #eebfca; /* Rosa vivo */
+}
+
+/* Estilos para el interruptor de tema */
+.switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.slider {
+    width: 34px;
+    height: 20px;
+    background-color: #f3c4d9; /* Rosa pálido */
+    border-radius: 34px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.4s;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 2px;
+    background-color: #ffffff; /* Blanco puro */
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #ff8ab9; /* Rosa brillante */
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+.light-theme {
+    background: #fff;
+    color: #4a4a4a;
+}
+
+/* Pantalla de inicio */
+.landing {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('futuristic-background.jpg') no-repeat center center/cover;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .landing {
+        background-size: contain;
+    }
+}
+
+/* Estilo para el título con efecto de brillo */
+.intro h1 {
+    font-size: 4rem;
+    color: #ff6f91;
+    animation: fadeIn 2s ease-out, glow 1.5s infinite alternate;
+}
+
+.intro p {
+    font-size: 1.5rem;
+    color: #ebeaeb;
+    margin-top: 20px;
+    animation: fadeIn 3s ease-out, glow 1.5s infinite alternate;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #ffd5ec;
+    color: #4a4a4a;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #ffb3d9; /* Color más brillante al pasar el mouse */
+}
+
+/* Galería */
+.gallery {
+    padding: 50px 0;
+    background: #ffe6f2; /* Fondo rosado tenue */
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.image-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255, 182, 193, 0.5); /* Sombras rosas */
+    transform: scale(0.95);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.7); /* Brillo en rosa */
+}
+
+.image-actions {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-item:hover .image-actions {
+    opacity: 1;
+}
+
+.like-btn, .share-btn {
+    background: linear-gradient(to right, #ff7eb9, #ffa6c9, #ffd5ec);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s ease;
+}
+
+.like-btn:hover, .share-btn:hover {
+    background: linear-gradient(to right, #ffd5ec, #ffa6c9, #ff7eb9);
+}
+
+/* Paginación */
+.pagination {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.page-btn {
+    padding: 10px 20px;
+    background: #ffd5ec;
+    color: #4a4a4a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 16px;
+}
+
+.page-btn:hover {
+    background: #ffb3d9;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(45deg, #ffa6c9, #ffcee5, #ffffff);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.social-icons a {
+    color: #ffa6c9;
+    margin: 0 10px;
+    font-size: 0.8rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff7eb9;
+}
