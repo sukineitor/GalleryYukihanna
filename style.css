@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to bottom, #005070, #028bfb, #9dc3ed); /* Tonos pastel rosados y blancos */
+    background: linear-gradient(to bottom, #01729e, #3c9cea, #9dc3ed); /* Tonos pastel rosados y blancos */
     color: #333; /* Color neutro para contraste */
     overflow-x: hidden;
     transition: background 0.3s ease, color 0.3s ease;
